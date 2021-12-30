@@ -1,0 +1,40 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      align-items: center;
+    }
+    div {
+      margin-bottom: 1rem;
+    }
+  </style>
+  <body>
+    <div>
+      <h1>Timestamp Microservice</h1>
+      <form action="">
+        <legend>unix</legend>
+        <input type="text" placeholder="1451001600000" />
+        <button disabled>send request</button>
+      </form>
+
+      <form action="">
+        <legend>utc</legend>
+        <input type="text" placeholder="2015-12-25" />
+        <button disabled>send request</button>
+      </form>
+    </div>
+    <div>
+      <a href="http://localhost:3000/api/1451001600000">unix test</a>
+      <a href="http://localhost:3000/api/2015-12-25">utc test</a>
+    </div>
+    <div>by mbanani @mbdev</div>
+  </body>
+</html>
