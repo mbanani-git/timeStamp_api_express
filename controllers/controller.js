@@ -4,9 +4,8 @@ moment().format();
 const sendUnix = (req, res) => {
   try {
     const { time } = req.params;
-    // let t = new Date("2015-12-25");
-    // console.log(t);
-    if (time.includes("-")) {
+    let t = moment("05 October 2011");
+    if (time.includes("-") || time.includes(" ")) {
       if (moment(time).isValid()) {
         let utc = moment.utc(time).format("ddd, DD MMM YYYY HH:mm:ss") + " GMT";
         let unix = Number(moment.utc(time).format("x"));
@@ -17,7 +16,7 @@ const sendUnix = (req, res) => {
     } else {
       if (moment(Number(time)).isValid()) {
         let utc = moment.utc(Number(time)).format("ddd, DD MMM YYYY HH:mm:ss") + " GMT";
-        let unix = moment.utc(Number(time)).format("x");
+        let unix = Number(moment.utc(Number(time)).format("x"));
 
         return res.status(201).json({ unix, utc });
       }
